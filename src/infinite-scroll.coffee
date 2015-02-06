@@ -182,7 +182,7 @@ mod.directive 'infiniteScroll', ['$rootScope', '$window', '$interval', 'THROTTLE
     # infinite-scroll-parent establishes this element's parent as the
     # container infinitely scrolled instead of the whole window.
     if attrs.infiniteScrollParent?
-      changeContainer angular.element elem.parent()
+      changeContainer angular.element elem.parents(attrs.infiniteScrollParent)
 
     # infinte-scoll-immediate-check sets whether or not run the
     # expression passed on infinite-scroll for the first time when the
