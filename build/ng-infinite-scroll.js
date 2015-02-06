@@ -1,4 +1,4 @@
-/* ng-infinite-scroll - v1.2.0 - 2014-12-02 */
+/* ng-infinite-scroll - v1.2.0 - 2015-02-06 */
 var mod;
 
 mod = angular.module('infinite-scroll', []);
@@ -161,7 +161,7 @@ mod.directive('infiniteScroll', [
         scope.$watch('infiniteScrollContainer', handleInfiniteScrollContainer);
         handleInfiniteScrollContainer(scope.infiniteScrollContainer || []);
         if (attrs.infiniteScrollParent != null) {
-          changeContainer(angular.element(elem.parent()));
+          changeContainer(angular.element(elem.parents(attrs.infiniteScrollParent)));
         }
         if (attrs.infiniteScrollImmediateCheck != null) {
           immediateCheck = scope.$eval(attrs.infiniteScrollImmediateCheck);
